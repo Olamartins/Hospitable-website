@@ -1,0 +1,591 @@
+/* ============= css reset ============= */
+
+@font-face {
+    font-family: 'Greatvibes';
+    src: url("../fonts/GreatVibes-Regular.ttf") format("Truetype");
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("../fonts/NunitoSans-Regular.ttf") format("Truetype");
+}
+
+:root {
+    --gradient-color: linear-gradient(270deg, rgba(71, 11, 243, .7), rgba(228, 114, 13, 0.9));
+    --primary-color: #470bf3;
+    --secondary-color: #e4720d;
+    --text-color: #3b3939;
+    --overlay: linear-gradient(rgba(2, 18, 58, 0.8), rgba(2, 18, 58, 0.8));
+    --header-bg: rgb(2, 18, 58);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #e7e4e4;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.btn-custom {
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    padding: 8px 25px;
+    color: white;
+    outline: none;
+    border: 0;
+    border-radius: 25px;
+    box-shadow: 0px 3px 5px #3b3939;
+    cursor: pointer;
+}
+
+
+/* ======= header-section ======== */
+
+header {
+    background: var(--overlay), url(../images/herobg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+}
+
+.bg-light {
+    background: var(--header-bg) !important;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus {
+    border: 0;
+    outline: none;
+}
+
+.fa-bars {
+    color: white;
+    font-size: 22px;
+}
+
+.nav-item:not(:last-child) {
+    padding-right: 20px;
+}
+
+.nav-link {
+    color: white !important;
+    transition: color ease-in-out .5s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+
+/* ============== hero section ============= */
+
+.hero {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 4rem;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-family: 'Greatvibes';
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: white;
+}
+
+.search {
+    background: var(--gradient-color);
+    padding: 1.5rem 0;
+}
+
+.search input {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+.search .form-control {
+    width: 100%;
+}
+
+.form-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-wrap .form-group {
+    float: left;
+}
+
+.form-wrap .form-group:not(:last-child) {
+    padding-right: 5px;
+}
+
+.btn-search {
+    align-items: baseline;
+    align-self: flex-end;
+}
+
+.form-group label {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .form-wrap {
+        flex-direction: column;
+    }
+    .btn-search {
+        align-items: baseline;
+        align-self: center;
+    }
+}
+
+.bar-room {
+    padding: 3.5rem 0;
+    width: 100%;
+}
+
+.summary h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--header-bg);
+}
+
+.summary p {
+    font-family: 'Greatvibes', sans-serif;
+    font-size: 24px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.bar-img {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.bar-display {
+    width: 100%;
+    display: none;
+    padding: 15px 30px;
+    color: white;
+}
+
+.bar {
+    transition: all ease-in-out .3s;
+}
+
+.bar-img img {
+    object-fit: cover;
+}
+
+.bar-img img:hover {
+    opacity: .8;
+    z-index: -1;
+}
+
+.bar:hover .bar-display {
+    background: var(--gradient-color);
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 90%;
+    left: 10;
+    top: 0;
+    z-index: 1;
+    animation: swing .3s forwards;
+}
+
+
+/* =============== offer-section ============== */
+
+.offer {
+    padding: 4rem 0;
+    background: var(--gradient-color), url("../images/herobg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 250px;
+}
+
+.offer-wrapper {
+    background-color: white;
+    width: 60%;
+    margin: auto;
+    padding: 25px 30px;
+    text-align: center;
+}
+
+.offer-wrapper h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.rooms {
+    padding: 4rem 0;
+}
+
+.room-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.room-img {
+    margin-right: 10px;
+    position: relative;
+}
+
+.room-info h3 {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.room-info h3 span {
+    color: #3b3939;
+    font-size: 16px;
+}
+
+.room-name {
+    position: absolute;
+    left: 5;
+    bottom: 10px;
+    background-color: var(--secondary-color);
+}
+
+.room-name h4 {
+    padding: 5px 10px;
+    color: #e7e4e4;
+    font-size: 16px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.booknow {
+    background: none;
+    border: 0;
+    outline: none;
+    color: #3b3939;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+
+/* ========== contact ============  */
+
+.contact {
+    padding: 5rem 0;
+    background: white;
+}
+
+.contact-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: center;
+}
+
+.traveler {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.traveler img {
+    width: 180px;
+}
+
+.contact-form {
+    background: var(--gradient-color);
+    padding: 20px 30px;
+}
+
+.form-contact-grid input,
+.form-contact-grid textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid #e7e4e4;
+    color: #e7e4e4;
+    font-size: 16px;
+}
+
+.form-contact-grid textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-contact-grid input:focus,
+.form-contact-grid textarea:focus {
+    border-bottom: 2px solid var(--header-bg);
+}
+
+.btn-send {
+    background: var(--header-bg);
+    color: #e7e4e4;
+    margin-top: 4px;
+    font-size: 14px;
+    transition: background ease-in-out 0.5s;
+}
+
+.btn-send:hover {
+    background: transparent;
+    color: #e7e4e4;
+    border-bottom: 2px solid var(--header-bg);
+}
+
+::-moz-placeholder {
+    color: #e1e1e1;
+}
+
+::placeholder {
+    color: #e1e1e1;
+}
+
+
+/* ============ footer ============= */
+
+footer {
+    padding: 30px 0;
+    background: var(--header-bg);
+    color: #e1e1e1;
+    position: relative;
+}
+
+.footer-info {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.socials span:not(:last-child) {
+    padding-right: 20px;
+}
+
+.socials span {
+    font-size: 20px;
+}
+
+.socials span a {
+    color: #e1e1e1;
+    transition: color ease-in-out .5s;
+}
+
+.socials span a:hover {
+    color: var(--secondary-color);
+}
+
+.up {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: -1.5rem;
+    right: 4rem;
+    display: flex;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.fa-chevron-up {
+    color: var(--header-bg);
+    font-size: 1.3rem;
+    margin: auto;
+}
+
+
+/* ============ 360px screen device =========== */
+
+@media screen and (max-width:360px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1.4rem;
+    }
+    .btn-custom {
+        padding: 6px 20px;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+    .bar-display h2 {
+        font-size: 1.4rem;
+    }
+    .bar-display p {
+        font-size: .9rem;
+        margin-top: -2px;
+    }
+    .bar-display span {
+        font-size: .6rem;
+        display: inline-block;
+        margin-top: -4px;
+    }
+    .offer-wrapper {
+        width: 80%;
+    }
+    .offer-wrapper p {
+        font-size: .9rem;
+    }
+    .title h2 {
+        font-size: 1.5rem;
+    }
+    .room-name h4 {
+        font-size: .8rem;
+    }
+    .room-info h3 {
+        font-size: 1rem;
+    }
+    .room-info h3 span {
+        font-size: .8rem;
+    }
+    .room-info p {
+        font-size: .7rem;
+        margin-bottom: -1px;
+    }
+    .booknow {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+    .traveler img {
+        width: 126px;
+    }
+    .footer-info {
+        width: 80%;
+    }
+    .footer-desc {
+        font-size: 13px;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+    .up {
+        width: 2rem;
+        height: 2rem;
+        top: -1rem;
+        right: 3rem;
+    }
+    .fa-chevron-up {
+        font-size: 1rem;
+    }
+}
+
+
+/* ================= scrollbar ============= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #525965;
+    border: 0px none #ffffff;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #525965;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #525965;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+    background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+/* ============== scrollbar ends ============= */
+
+
+/* animation */
+
+@keyframes swing {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    90% {
+        width: 90%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0.99);
+    }
+    70% {
+        box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0);
+    }
+}
+
+
+/* animation ends */
